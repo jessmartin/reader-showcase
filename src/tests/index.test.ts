@@ -1,7 +1,9 @@
 import { describe, it, expect } from 'vitest'
+import { documentToHtml } from '$lib/util'
 
-describe('sum test', () => {
-  it('adds 1 + 2 to equal 3', () => {
-    expect(1 + 2).toBe(4)
+describe('documentToHtml', () => {
+  it('generates html with paragraphs and stuff', () => {
+    const html = ''
+    expect(html).toBe('<html><head></head><body></body></html>')
   })
 })

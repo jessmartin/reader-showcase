@@ -1,8 +1,7 @@
 import type { PageLoad } from './$types'
 import { error } from '@sveltejs/kit'
 import { getCollection } from 'sveltefirets'
-import type { JDOM, ReaderHighlight, ReaderScribble } from '$lib/documents.interface'
-import type { Document } from '$lib/documents.interface'
+import type { Document, JDOM, ReaderHighlight, ReaderScribble } from '$lib/types'
 
 export const load: PageLoad = async ({ params }) => {
   const articleName = params.articleName
