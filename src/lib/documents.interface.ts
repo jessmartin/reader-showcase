@@ -7,8 +7,8 @@ export interface JDOM {
 }
 
 export interface IDocument extends IFirestoreMetaData {
-  id: string
-  jdom: JDOM[]
+  id?: string
+  jdom?: JDOM[]
   reader_scribbles?: {
     id: ReaderScribble
   }[]
