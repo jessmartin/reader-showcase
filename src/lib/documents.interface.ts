@@ -7,17 +7,14 @@ export interface JDOM {
 }
 
 export interface IDocument extends IFirestoreMetaData {
+  id: string
   jdom: JDOM[]
-  reader_scribbles?: [
-    {
-      id: ReaderScribble
-    }
-  ]
-  reader_highlights?: [
-    {
-      id: ReaderHighlight
-    }
-  ]
+  reader_scribbles?: {
+    id: ReaderScribble
+  }[]
+  reader_highlights?: {
+    id: ReaderHighlight
+  }[]
 }
 
 export interface Mark {
@@ -34,12 +31,12 @@ export interface ReadingOrder {
 }
 
 export interface ReaderScribble {
-  type: { value: 'reader_scribble' }
+  type: { value: 'reader_scribbles' }
   deleted: boolean
   diameter: number
   id: { value: string }
   pageIndex: number
-  points: [Point]
+  points: Point[]
   rgbaColor: RGBAColor
 }
 
