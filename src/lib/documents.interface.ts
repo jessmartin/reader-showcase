@@ -1,6 +1,10 @@
 import type { IFirestoreMetaData } from 'sveltefirets'
 
 export interface JDOM {
+  pageRange: {
+    startOffset: number
+    endOffset: number
+  }
   text: string
   marks: Mark[]
   readingOrder: ReadingOrder[]
