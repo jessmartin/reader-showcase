@@ -6,9 +6,9 @@ export interface JDOM {
   readingOrder: ReadingOrder[]
 }
 
-export interface IDocument extends IFirestoreMetaData {
-  id?: string
-  jdom?: JDOM[]
+export interface Document extends IFirestoreMetaData {
+  id: string
+  jdom: JDOM[]
   reader_scribbles?: {
     id: ReaderScribble
   }[]
@@ -21,7 +21,7 @@ export interface Mark {
   start: number
   end: number
   type: string
-  labels: string[]
+  labels?: string[]
 }
 
 export interface ReadingOrder {

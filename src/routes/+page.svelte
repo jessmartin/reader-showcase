@@ -4,8 +4,10 @@
 </script>
 
 <Collection path="sources" queryConstraints={[limit(10)]} let:data={documents}>
-  Show the FireStore data:
-  {#each documents as document}
-    <div>{document.id}</div>
-  {/each}
+  <p>Articles:</p>
+  <ul>
+    {#each documents as document}
+      <li><a class="underline" href="/articles/{document.id}">{document.id}</a></li>
+    {/each}
+  </ul>
 </Collection>

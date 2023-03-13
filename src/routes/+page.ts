@@ -1,14 +1,10 @@
-import { getCollection, getFirebaseApp } from 'sveltefirets'
-import { getFirestore, limit } from 'firebase/firestore'
+import { getCollection } from 'sveltefirets'
+import { limit } from 'firebase/firestore'
 import type { PageLoad } from './$types'
-import type { IDocument } from '$lib/documents.interface'
+import type { Document } from '$lib/documents.interface'
 
 export const load: PageLoad = async () => {
-  const db = getFirestore(getFirebaseApp())
-  console.log(db.toJSON())
-
-  const documents = await getCollection<IDocument>(`sources`, [limit(5)])
-  console.log(documents)
+  const documents = await getCollection<Document>(`sources`, [limit(5)])
 
   return { documents }
 
